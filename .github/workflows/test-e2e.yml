@@ -21,7 +21,7 @@ on:
 
 jobs:
   e2eTest:
-    runs-on: macOS-latest-large # enables hardware acceleration in the virtual machine
+    runs-on: ubuntu-latest
     timeout-minutes: 40
     env:
       FIREBASE_CLI_EXPERIMENTS: webframeworks
