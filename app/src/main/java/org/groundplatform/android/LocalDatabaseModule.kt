@@ -29,6 +29,8 @@ import kotlinx.coroutines.asExecutor
 import org.groundplatform.android.common.Constants
 import org.groundplatform.android.coroutines.IoDispatcher
 import org.groundplatform.android.data.local.room.LocalDatabase
+import org.groundplatform.android.data.local.room.migration.Migration_124_125
+import org.groundplatform.android.data.local.room.migration.Migration_125_126
 
 @InstallIn(SingletonComponent::class)
 @Module
@@ -51,6 +53,7 @@ object LocalDatabaseModule {
         .setTransactionExecutor(Executors.newSingleThreadExecutor())
         // Run queries and transactions on background I/O thread.
         .setQueryExecutor(ioDispatcher.asExecutor())
+        .addMigrations(Migration_124_125, Migration_125_126)
         .build()
         .also { INSTANCE = it }
   }

@@ -23,6 +23,8 @@ import org.groundplatform.android.data.remote.RemoteDataStore
 import org.groundplatform.android.model.Role
 import org.groundplatform.android.model.User
 import org.groundplatform.android.model.locationofinterest.LocationOfInterest
+import org.groundplatform.android.model.settings.MeasurementUnits
+import org.groundplatform.android.model.settings.UserSettings
 import org.groundplatform.android.proto.Survey
 import org.groundplatform.android.system.NetworkManager
 import org.groundplatform.android.system.auth.AuthenticationManager
@@ -120,4 +122,13 @@ constructor(
 
     return isOrganizer
   }
+
+  fun getUserSettings(): UserSettings =
+    with(localValueStore) {
+      UserSettings(
+        language = selectedLanguage,
+        measurementUnits = MeasurementUnits.valueOf(selectedLengthUnit),
+        shouldUploadPhotosOnWifiOnly = shouldUploadMediaOverUnmeteredConnectionOnly(),
+      )
+    }
 }
