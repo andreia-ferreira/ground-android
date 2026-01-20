@@ -93,7 +93,8 @@ class CompleteAllTaskTypesTest {
   }
 
   private fun captureScreenshot() {
-    val screenShotName = "${javaClass.simpleName}_${nameRule.methodName}"
+    val timestamp = System.currentTimeMillis()
+    val screenShotName = "${javaClass.simpleName}_${nameRule.methodName}_$timestamp"
     Log.d("Screenshots", "Taking screenshot of '$screenShotName'")
     try {
       takeScreenshot().writeToTestStorage(screenShotName)

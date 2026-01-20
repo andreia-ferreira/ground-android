@@ -11,7 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-name: End to End Test
+name: Run integration tests
 
 on:
   workflow_dispatch:
@@ -32,7 +32,7 @@ jobs:
         uses: andreia-ferreira/ground-platform/.github/actions/start-emulator@master
 
       - name: Run Android Tests on e2eTest module
-        uses: andreia-ferreira/ground-android/.github/actions/run-instrumentation@master
+        uses: andreia-ferreira/ground-android/.github/actions/submit-survey@master
         with:
           android-repository: ${{ github.repository }}
           upload-artifacts: true
