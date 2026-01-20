@@ -11,7 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-name: Submit to survey
+name: Run all automated tests in the e2eTeest module
 
 inputs:
   android-repository:
@@ -103,7 +103,7 @@ runs:
         name: test-screenshots
         path: '**/build/outputs/connected_android_test_additional_output'
         retention-days: 7
-        if-no-files-found: warn
+        if-no-files-found: ignore
 
     - name: Export Firebase emulator data
       if: always()

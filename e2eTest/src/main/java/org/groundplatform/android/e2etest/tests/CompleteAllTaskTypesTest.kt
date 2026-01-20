@@ -90,7 +90,6 @@ class CompleteAllTaskTypesTest {
       dismissInstructions()
       runTasks(TestConfig.TEST_LIST_ALL_TASK_TYPES_EXCEPT_DRAW_AREA)
     }
-    with(HomeScreenRobot(testDriver)) { moveMap() }
   }
 
   private fun captureScreenshot() {
