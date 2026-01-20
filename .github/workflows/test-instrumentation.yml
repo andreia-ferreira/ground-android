@@ -32,7 +32,7 @@ jobs:
         uses: andreia-ferreira/ground-platform/.github/actions/start-emulator@master
 
       - name: Run Android Tests on e2eTest module
-        uses: andreia-ferreira/ground-android/.github/actions/submit-test@master
+        uses: andreia-ferreira/ground-android/.github/actions/run-instrumentation@master
         with:
           android-repository: ${{ github.repository }}
           upload-artifacts: true
