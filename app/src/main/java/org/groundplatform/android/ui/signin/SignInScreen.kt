@@ -112,7 +112,7 @@ private fun LogoAndTitle(modifier: Modifier = Modifier) {
 @Composable
 private fun GoogleSignInButton(modifier: Modifier = Modifier, onClick: () -> Unit) {
   AndroidView(
-    modifier = modifier.wrapContentSize().testTag(BUTTON_TEST_TAG),
+    modifier = modifier.wrapContentSize().testTag("wrong tag"),
     factory = { context -> SignInButton(context).apply { setSize(SignInButton.SIZE_WIDE) } },
     update = { button -> button.setOnClickListener { onClick() } },
   )
