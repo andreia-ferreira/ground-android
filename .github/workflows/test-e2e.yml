@@ -16,6 +16,9 @@ name: End to End Test
 on:
   workflow_dispatch:
   workflow_call:
+    secrets:
+      MAPS_API_KEY:
+        required: true
 
 permissions:
   contents: read
