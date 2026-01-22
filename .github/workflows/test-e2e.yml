@@ -37,6 +37,8 @@ jobs:
 
       - name: Start Firebase emulator
         uses: google/ground-platform/.github/actions/start-emulator@master
+        with:
+          platform-repository: andreia-ferreira/ground-platform
 
       - name: Run Android tests on e2eTest module
         uses: google/ground-android/.github/actions/submit-test@master
