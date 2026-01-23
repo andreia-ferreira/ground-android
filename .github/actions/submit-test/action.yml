@@ -25,6 +25,7 @@ inputs:
   google-maps-key:
     description: 'A Google Maps API key'
 
+
 runs:
   using: composite
   steps:
